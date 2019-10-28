@@ -1,0 +1,93 @@
+Algoritmo "Q2_natan_santana_de_vasconcelos"
+// Autor(a)    : Natan Santana de Vasconcelos
+// Data atual  : 28/10/2019
+Var
+
+   x, y : inteiro
+   a, b, c, d : real
+   continuar : caractere
+
+Inicio
+
+   Escreval ("Vamos descobrir se dois números inteiros positivos são: par ou")
+   Escreval ("ímpar, multiplo de 2 ou multiplo de 3")
+   Escreval (" ")
+   Escreva (">>>Aperter [enter] para continuar ")
+   Leia (continuar)
+
+   //primeiro número
+   Repita
+      Limpatela
+      Escreva ("Insira o primeiro número: ")
+      Leia (x)
+      Escreval (" ")
+      Se (x < 0) entao
+         Escreval ("O número inserido é negativo, insira um número positivo")
+         Escreval (" ")
+         Escreva (">>>Aperte [enter] para continuar ")
+         Leia (continuar)
+      fimse
+   Até (x > 0)
+
+   //segundo número
+   Repita
+      Limpatela
+      Escreva ("Insira o segundo número: ")
+      Leia (y)
+      Escreval (" ")
+      Se (y < 0) entao
+         Escreval ("O número inserido é negativo, insira um número positivo")
+         Escreval (" ")
+         Escreva (">>>Aperte [enter] para continuar ")
+         Leia (continuar)
+      fimse
+   Até (y > 0)
+
+   //resultado primeiro
+   Limpatela
+   a <- x Mod 2
+   b <- x Mod 3
+   Escreval ("Primeiro número:")
+   Se (a = 0) entao
+      Escreval (" ")
+      Escreval ("Impar ou par: Par ")
+      Escreval (" ")
+      Escreval ("Multiplo de 2: Sim ")
+   Senao
+      Escreval (" ")
+      Escreval ("Impar ou par: Impar ")
+      Escreval (" ")
+      Escreval ("Multiplo de 2: Não ")
+   Fimse
+   Se (b = 0) entao
+      Escreval (" ")
+      Escreval ("Multiplo de 3: Sim ")
+   senao
+      Escreval (" ")
+      Escreval ("Multiplo de 3: Não ")
+   fimse
+
+   //resultado segundo
+   Escreval (" ")
+   c <- y Mod 2
+   d <- y Mod 3
+   Escreval ("Segundo número:")
+   Se (c = 0) entao
+      Escreval (" ")
+      Escreval ("Impar ou par: Par ")
+      Escreval (" ")
+      Escreval ("Multiplo de 2: Sim ")
+   Senao
+      Escreval (" ")
+      Escreval ("Impar ou par: Impar ")
+      Escreval (" ")
+      Escreval ("Multiplo de 2: Não ")
+   Fimse
+   Se (d = 0) entao
+      Escreval (" ")
+      Escreval ("Multiplo de 3: Sim ")
+   senao
+      Escreval (" ")
+      Escreval ("Multiplo de 3: Não ")
+   fimse
+Fimalgoritmo
