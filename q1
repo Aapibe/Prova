@@ -1,0 +1,91 @@
+Algoritmo "Q1_CB3004708_Natan_Santana_de_Vasconcelos"
+// Disciplina  :  [Linguagem e Lógica de Programação]
+// Professor   : Enzo Bertazini
+// Descrição   : Cadastro do aluno, nome, data de matricula, notas de
+//tres trimestres e faltas.
+// Autor(a)    : Natan Santana de Vasconcelos
+// Data atual  : 09/12/2019
+Var
+
+   Dados: vetor[1..4,1..3] de caractere
+   Notas: vetor[1..4,1..4] de Real
+   Faltas: vetor[1..4,1..4] de Real
+   i, j, taulas, y:inteiro
+   x : real
+   teste: logico
+
+Inicio
+   Escreval ("Vamos fazer o cadastro de 4 alunos, mas antes responda")
+   Escreval (" ")
+   Escreva ("Qual foi o total de aulas ministradas no ano? ")
+   Leia (taulas)
+   x <- (taulas / 100)*20
+
+   //Cadastro
+   Para i de 1 até 4 faca
+      Escreval ("Vamos cadastrar o", i,"° aluno")
+      Escreval (" ")
+      Limpatela
+      Escreva ("Escreva o nome do", i,"° aluno:")
+      Leia (Dados[i,1])
+      Escreval (" ")
+      Escreva ("Escreva a data de matricula do", i,"° aluno:")
+      Leia (Dados[i,2])
+      Escreval (" ")
+      Para j de 1 ate 3 faca
+         teste <- verdadeiro
+         Escreval (j,"° Trimestre")
+         Escreval (" ")
+         Enquanto teste faca
+            Escreva ("Escreva a nota do", i,"° trimestre do aluno:")
+            Leia (Notas[i,j])
+            Se (Notas[i,j] > 10) ou (Notas[i,j] < 0) entao
+               Escreval (" ")
+               Escreval ("O valor inserido é inválido a nota deve ser um valor")
+               Escreval ("entre 0 e 10")
+               Escreval (" ")
+            senao
+               teste <- falso
+            fimse
+         fimenquanto
+         Escreval (" ")
+         Escreva ("Escreva a quantidade de falta no", i,"° trimestre do aluno:")
+         Leia (Faltas[i,j])
+         Escreval (" ")
+      fimpara
+   fimpara
+
+   //Media Anual
+   para i de 1 ate 4 faca
+      Notas[i,4] <- ( Notas[i,1] + Notas[i,2] + Notas[i,3] )/3
+      Se (Notas[i,4] > 7) entao
+         Dados[i,3]<-"Aprovado"
+      senao
+         Dados[i,3]<-"Reprovado"
+      fimse
+   fimpara
+
+
+   //total de faltas
+   para i de 1 ate 4 faca
+      Faltas[i,4] <- Faltas[i,1] + Faltas[i,2] + Faltas[i,3]
+      Se Faltas[i,4] > x entao
+         Dados[i,3]<-"Reprovado por Falta"
+      fimse
+   fimpara
+
+   //Relatorio FInal
+   Limpatela
+   para i de 1 ate 4 faca
+      Escreval ("Nome do Aluno: ", Dados[i,1])
+      Escreval ("Data de Matrícula: ", Dados[i,1])
+      Escreval ("Quantidade total de faltas:", Faltas[i,4])
+      Escreval ("Media Anual:", Notas[i,4])
+      Escreval ("Situação: ", Dados[i,3])
+      Escreval ("---------------------------------")
+   fimpara
+
+
+
+
+Fimalgoritmo
